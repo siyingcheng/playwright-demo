@@ -30,3 +30,22 @@ npx playwright codegen
 #We suggest that you begin by typing:
 npx playwright test
 ```
+
+## About Demo
+
+This is a demo project to showcase the usage of Playwright library.
+It includes a simple test suite to test the [saucedemo](https://www.saucedemo.com/) page.
+
+## Run Demo Cases
+
+```shell
+npx playwright test login.spec.ts
+# Or with headed mode:
+npx playwright test --headed login.spec.ts
+```
+
+Open HTML report:
+
+```shell
+npx playwright show-report
+```
