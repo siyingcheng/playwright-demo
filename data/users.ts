@@ -7,6 +7,11 @@ export const STANDARD_USER: LoginUser = {
   password: DEFAULT_PASSWORD,
 };
 
+export const NON_EXIST_USER: LoginUser = {
+  username: "non_exist_user",
+  password: DEFAULT_PASSWORD,
+};
+
 export const LOCKED_OUT_USER: LoginUser = {
   username: "locked_out_user",
   password: DEFAULT_PASSWORD,

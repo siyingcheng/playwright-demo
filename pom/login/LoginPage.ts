@@ -29,4 +29,8 @@ export class LoginPage {
   loginButton() {
     return this.loginBtn;
   }
+
+  getErrorMessage() {
+    return this.loginErrorMessage;
+  }
 }
