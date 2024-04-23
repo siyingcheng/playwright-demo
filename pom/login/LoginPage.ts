@@ -25,12 +25,4 @@ export class LoginPage {
   async goto() {
     await this.page.goto("/");
   }
-
-  loginButton() {
-    return this.loginBtn;
-  }
-
-  getErrorMessage() {
-    return this.loginErrorMessage;
-  }
 }
