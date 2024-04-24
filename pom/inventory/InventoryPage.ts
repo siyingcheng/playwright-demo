@@ -5,6 +5,7 @@ import { CartPage } from "./CartPage";
 export class InventoryPage {
   readonly page: Page;
   readonly cartBtn: Locator;
+
   constructor(page) {
     this.page = page;
     this.cartBtn = page.getByTestId("shopping-cart-link");

@@ -1,6 +1,7 @@
 import { Locator, Page, expect } from "@playwright/test";
 import { LoginUser } from "../../models";
 import { STANDARD_USER } from "../../data";
+import { InventoryPage } from "../inventory/InventoryPage";
 
 export class LoginPage {
   readonly page: Page;
@@ -17,10 +18,12 @@ export class LoginPage {
     this.loginErrorMessage = page.getByTestId("error");
   }
 
-  async loginWith(user: LoginUser) {
+  async loginWith(user: LoginUser): Promise<InventoryPage> {
     await this.usernameInput.fill(user.username);
     await this.passwordInput.fill(user.password);
     await this.loginBtn.click();
+    await this.page.waitForLoadState();
+    return new InventoryPage(this.page);
   }
 
   async load() {
@@ -31,7 +34,7 @@ export class LoginPage {
     await expect(this.loginBtn, "Expect log in page is loaded").toBeVisible();
   }
 
-  async loginAsStandardUser() {
-    await this.loginWith(STANDARD_USER);
+  async loginAsStandardUser(): Promise<InventoryPage> {
+    return await this.loginWith(STANDARD_USER);
   }
 }
